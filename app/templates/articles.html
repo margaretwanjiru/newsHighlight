@@ -1,1 +1,30 @@
+ {% extends 'base.html' %} 
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> {{name}} </h1>
+        </div>
+    </div>
+    <div class="row">
+        {% for article in news %}
+        <div class="col-md-3 articles-details">
+            <a href={{article.url}} target="_blank">
+                <img class="img_fluid" src={{article.image}} >
+            </a>
+            <div class="words">
+                <h4 class="text-bold"> {{article.title}} </h4>
+                <p class="small">Posted on {{article.date}}</p>
+                <hr>
+                <p> {{article.description | truncate(80)}}</p>
+                    <a href={{article.url}} target="_blank">See More</a>
+             
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
+
+{% endblock%}
 
