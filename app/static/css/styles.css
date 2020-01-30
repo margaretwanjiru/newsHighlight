@@ -1,0 +1,133 @@
+ 
+#navMain {
+    font-family: 'Julius Sans One';
+    font-size: 100%;
+    text-transform: uppercase;
+}
+
+#navMain .navbar-toggler {
+    font-size: 14px;
+    padding: 11px;
+    color: rgba(230, 130, 16, 0.973);
+}
+
+#navMain a {
+    color: rgba(230, 130, 16, 0.973);
+    text-decoration: none;
+}
+
+#navMain .navbar-nav .nav-item:active,
+#navMain .navbar-nav .nav-item:focus {
+    outline: none;
+    background-color: rgb(240, 120, 120);
+}
+
+@media (min-width: 992px) {
+    #navMain {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        -webkit-transition: padding-top 0.5s ease-in-out, padding-bottom 0.5s;
+        -moz-transition: padding-top 0.5s ease-in-out, padding-bottom 0.5s;
+        transition: padding-top 0.5s ease-in-out, padding-bottom 0.5s;
+        letter-spacing: 1px;
+        background: transparent;
+    }
+    #navMain .nav-link.active {
+        outline: none;
+        background-color: rgba(26, 25, 24, 0.699);
+    }
+    #navMain .nav-link.active:hover {
+        color: white;
+        background-color: rgba(230, 210, 97, 0.637)
+    }
+    #navMain.navbar-shrink {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #222;
+        border-bottom: 1px solid red;
+    }
+    #navMain.navbar-shrink a{
+        color: rgba(230, 130, 16, 0.973);
+    }
+}
+.heading {
+    text-align: center;
+    font-family: 'Allura';
+    background-color: #222;
+}
+
+h1 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    font-size: 70px;
+    word-wrap: break-word;
+    color: white
+}
+
+.categories {
+    text-align: center;
+    margin-top: 2rem;
+}
+.categories h2{
+    font-family: 'Julius Sans One';    
+}
+.single-source {
+    box-shadow: 2px 4px 12px 2px #DCDCDC;
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.source-name {
+    text-align: right;
+}
+
+.source-details {
+    border-left: 1px solid rgba(88, 88, 88, 0.548)
+}
+
+.articles-details img {
+    max-width: 100%;
+}
+
+.articles-details {
+    box-shadow: 2px 4px 12px 2px #DCDCDC;
+    margin: 1rem;
+    padding: 0;
+    border-radius: 10px;
+}
+
+.words {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.words p{
+    font-family: 'Mallanna';
+}
+img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+.small{
+    margin-bottom: 0
+}
+h3{
+    font-family: 'Julius Sans One';
+    word-wrap: break-word;
+}
+h4{
+    font-family: 'Josefin Sans';
+}
+p{
+    word-wrap: break-word;
+}
+.heading #search{
+    margin-top: 25rem;
+}
