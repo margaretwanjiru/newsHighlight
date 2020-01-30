@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %}
+<!-- Content block -->
+{% block content %}
+
+<h1 class ="title">  {{ title }} </h1>
+    <div class="container-fluid">
+
+        <h2>Business News</h2>
+        <div class="row">
+            {{ macro.sourceCategory(sources)}}
+        </div>
+
+
+        <h2>Tech News</h2>
+        <div class="row">
+            {{ macro.sourceCategory(technology_sources)}}
+        </div>
+
+
+        <h2>Entertainment News</h2>
+        <div class="row">
+            {{ macro.sourceCategory(entertainment_sources)}}
+        </div>
+
+
+        <h2>Sports News</h2>
+        <div class="row">
+            {{ macro.sourceCategory(sports_sources)}}
+        </div>
+    </div>
+
+{% endblock %}
