@@ -1,30 +1,45 @@
- {% extends 'base.html' %} 
-{% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <h1> {{name}} </h1>
-        </div>
-    </div>
-    <div class="row">
-        {% for article in news %}
-        <div class="col-md-3 articles-details">
-            <a href={{article.url}} target="_blank">
-                <img class="img_fluid" src={{article.image}} >
-            </a>
-            <div class="words">
-                <h4 class="text-bold"> {{article.title}} </h4>
-                <p class="small">Posted on {{article.date}}</p>
-                <hr>
-                <p> {{article.description | truncate(80)}}</p>
-                    <a href={{article.url}} target="_blank">See More</a>
-             
-            </div>
-        </div>
+{% extends 'base.html'%}
+{% block content%}
+<div class="container">
+
+	<!-- Popular movie section  -->
+        <h3> Top Headlines</h3>
+        {% for article_row in articles | batch(4)%}
+
+	        <div class="row">
+	       
+		        {% for article in article_row %}
+
+		        	<div class="col-md-3">
+				        <div class="thumbnail">
+				        <a href="{{article.url}}" target="_blank">
+						      <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
+						      </a>
+						      <div class="caption">
+						        <h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>
+						        <p>{{article.description | truncate(80)}}</p>
+						        <a href="{{article.url}}" target="_blank"> Read Further</a>
+
+						        
+						      </div>
+						      <div class="footer">
+						      Posted on: {{article.date}}
+						      
+								
+							</div>
+	  					</div>
+
+
+			     	</div>
+			     	
+		        {% endfor %}
+	        
+	        </div>
+         
         {% endfor %}
-    </div>
+        
+	
 </div>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
 
-{% endblock%}
 
+{% endblock %}

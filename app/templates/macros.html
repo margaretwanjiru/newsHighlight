@@ -1,14 +1,14 @@
-{% macro sourceCategory(categories) %}
-    {% for category in categories%}
+{% macro displaySourceList(source_list) %}
 
+	{% for source_row in source_list |batch(4)%}
     <div class="row">
         <div class="col-md-4">
-            <h3> {{category.name}} </h3>
+            <h3> {{source_list.name}} </h3>
         </div>
         <div class="panel-body">
-            <p> {{category.description|truncate(100)}}
+            <p> {{source_list.description|truncate(100)}}
                 <br>
-                <a href="/articles/{{category.id}}&40" class="btn btn-success btn-sm">Read {{category.name}}.</a>
+               <a href="/sources/{{source_list.id}}" class="btn btn-success btn-sm">Visit {{source_row.name}}</a>
             </p>            
         </div>
     </div>
