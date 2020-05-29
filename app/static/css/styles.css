@@ -131,3 +131,8 @@ p{
 .heading #search{
     margin-top: 25rem;
 }
+.navbar-brand{
+ color:red;
+ fontsize:120px;
+ display:center;
+ marin-left:40%
